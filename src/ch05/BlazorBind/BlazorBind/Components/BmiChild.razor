@@ -25,6 +25,7 @@
             this.result = Weight / ((Height / 100) * (Height / 100));
         }
     }
+
     // パラメータの変更を受け付ける時に必須. MVVM の twoway と同じ
     [Parameter]
     public EventCallback<double> WeightChanged { get; set; }

@@ -7,7 +7,7 @@ namespace BlazorBind
 {
     public class BmiItem
     {
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         public double Hight { get; set; }
         public double Weight { get; set; }
     }

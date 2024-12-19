@@ -2,29 +2,29 @@
     <td>@Name</td>
     <td>@Height</td>
     <td>@Weight</td>
-    <td>@item.Bmi.ToString("00.0")</td>
+    <td>@item?.Bmi.ToString("00.0")</td>
 </tr>
 
 @code {
     [Parameter]
-    public string Name { get; set; }
+    public string Name { get; set; } = "";
     [Parameter]
     public double Height { get; set; }
     [Parameter]
     public double Weight { get; set; }
 
-    private BmiItem item;
+    private BmiItem? item;
 
     protected override void OnInitialized()
     {
         item = new BmiItem()
-        {
-            Name = Name,
-            Height = Height,
-            Weight = Weight,
-        };
+            {
+                Name = Name,
+                Height = Height,
+                Weight = Weight,
+            };
     }
 
     [Parameter]
-    public RenderFragment ChildContent { get; set; }
+    public RenderFragment? ChildContent { get; set; }
 }

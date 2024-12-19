@@ -6,29 +6,29 @@
 <table class="table">
     <tr>
         <td>名前</td>
-        <td>@bmi.Name</td>
+        <td>@bmi?.Name</td>
     </tr>
     <tr>
         <td>身長</td>
-        <td>@bmi.Height</td>
+        <td>@bmi?.Height</td>
     </tr>
     <tr>
         <td>体重</td>
-        <td>@bmi.Weight</td>
+        <td>@bmi?.Weight</td>
     </tr>
 </table>
 
 <div style="font-size: @fontSize">
-    計算結果は @bmi.Bmi.ToString("00.0") です。
+    計算結果は @bmi?.Bmi.ToString("00.0") です。
 </div>
 
 @code {
     [Parameter]
-    public string Height { get; set; }
+    public string Height { get; set; } = "";
     [Parameter]
-    public string Weight { get; set; }
+    public string Weight { get; set; } = "";
 
-    private BmiItem bmi;
+    private BmiItem? bmi;
     private string fontSize = "32px";
 
     protected override void OnInitialized()

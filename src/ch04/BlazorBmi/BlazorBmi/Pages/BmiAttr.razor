@@ -31,17 +31,17 @@
     @foreach (var it in Items)
     {
         var attrs = new Dictionary<string, object>()
-        {
-            { "Name", it.Name },
-            { "Height", it.Height },
-            { "Weight", it.Weight },
-        };
+    {
+        { "Name", it.Name },
+        { "Height", it.Height },
+        { "Weight", it.Weight },
+    };
         <BlazorBmi.Components.BmiChildItem @attributes="attrs" />
     }
 </table>
 
 @code {
-    private List<BmiItem> Items { get; set; }
+    private List<BmiItem> Items { get; set; } = new List<BmiItem>();
 
     /// <summary>
     /// パラメータを初期化する
@@ -58,7 +58,7 @@
 
     // 属性スプラッティングの手法
     private Dictionary<string, object> copyrightAttrs = new Dictionary<string, object>()
-{
+    {
         {"Year", 2021 },
         {"Name", "ますだともあき" }
     };
