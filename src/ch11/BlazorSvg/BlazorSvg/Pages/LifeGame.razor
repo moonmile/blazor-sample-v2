@@ -24,7 +24,7 @@
     private const int wy = 50;
     private bool[,] cells { get; set; } = new bool[wx, wy];
     private bool[,] sub = new bool[wx, wy];
-    private Task _task;
+    private Task? _task;
     private bool _flag;
 
     private void onClick(MouseEventArgs e, int x, int y)

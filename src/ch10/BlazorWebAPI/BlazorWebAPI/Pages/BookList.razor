@@ -58,8 +58,8 @@
 @code {
 
     private List<Books> books { get; set; } = new List<Books>();
-    private Books book { get; set; } = new Books();
-    private string Message { get; set; }
+    private Books? book { get; set; } = new Books();
+    private string Message { get; set; } = "";
 
     protected override void OnInitialized()
     {
@@ -72,6 +72,7 @@
     private async void onSearch()
     {
         var items = await Http.GetFromJsonAsync<List<Books>>("http://localhost:5000/api/books/");
+        if (items == null) return;
         this.books = items;
         this.StateHasChanged();
     }
@@ -88,7 +89,7 @@
     /// </summary>
     private async void onUpdate()
     {
-        if (this.book.Id == 0)
+        if (this.book?.Id == 0)
         {
             // 新規作成
             var res = await Http.PostAsJsonAsync("http://localhost:5000/api/books/", book);
@@ -97,7 +98,7 @@
         else
         {
             // 更新処理
-            var res = await Http.PutAsJsonAsync($"http://localhost:5000/api/books/{book.Id}", book);
+            var res = await Http.PutAsJsonAsync($"http://localhost:5000/api/books/{book?.Id}", book);
         }
         // リストを更新
         onSearch();
@@ -108,12 +109,12 @@
     /// </summary>
     private async void onDelete()
     {
-        if (this.book.Id == 0) return;
+        if (this.book?.Id == 0) return;
 
         if (await JSRuntime.InvokeAsync<int>(
             "jsFunctions.confirmOkCancel", "削除してもよろしいですか？") == 0) return;
 
-        var res = await Http.DeleteAsync($"http://localhost:5000/api/books/{book.Id}");
+        var res = await Http.DeleteAsync($"http://localhost:5000/api/books/{book?.Id}");
         onSearch();
         Message = "削除しました";
     }
