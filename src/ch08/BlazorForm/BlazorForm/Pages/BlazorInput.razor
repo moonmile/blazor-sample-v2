@@ -46,11 +46,11 @@
 
     public class Address
     {
-        public string zipCode { get; set; }
-        public string prefecture { get; set; }
+        public string zipCode { get; set; } = "";
+        public string prefecture { get; set; } = "";
 
-        public string telephone { get; set; }
-        public string name { get; set; }
+        public string telephone { get; set; } = "";
+        public string name { get; set; } = "";
         public int age { get; set; }
 
         public bool isVisitDate { get; set;  }
@@ -58,7 +58,7 @@
 
     }
     private Address addressModel = new Address();
-    private string Message { get; set; }
+    private string Message { get; set; } = "";
     private void onValidSubmit()
     {
         Message = addressModel.name + " さん、登録ありがとうございました ";

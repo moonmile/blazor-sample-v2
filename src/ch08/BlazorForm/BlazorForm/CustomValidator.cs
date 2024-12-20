@@ -9,13 +9,13 @@ namespace BlazorForm
 {
     public class CustomValidator : ComponentBase
     {
-        private ValidationMessageStore messageStore;
+        private ValidationMessageStore messageStore = default!;
         [CascadingParameter]
-        private EditContext CurrentEditContext { get; set; }
+        private EditContext CurrentEditContext { get; set; } = default!;
 
         protected override void OnInitialized()
         {
-            if ( this.CurrentEditContext == null )
+            if (this.CurrentEditContext == null)
             {
                 throw new InvalidOperationException("コンポーネント作成エラー");
             }

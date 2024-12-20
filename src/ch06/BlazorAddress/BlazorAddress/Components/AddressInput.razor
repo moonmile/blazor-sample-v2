@@ -33,14 +33,13 @@
 </div>
 
 @code {
-
-    private string zipCode { get; set; }
-    private string prefecture { get; set; }
-    private string telephone { get; set; }
-    private string name { get; set; }
+    private string zipCode { get; set; } = "";
+    private string prefecture { get; set; } = "";
+    private string telephone { get; set; } = "";
+    private string name { get; set; } = "";
     private int age { get; set; }
 
-    private string Message { get; set; }
+    private string Message { get; set; } = "";
 
     [Parameter]
     public EventCallback<BlazorAddress.AddressItem> OnCommit { get; set; }

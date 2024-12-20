@@ -5,7 +5,7 @@
 
 @* Model の結びつけは OnInitialized で行う *@
 <EditForm OnValidSubmit="onValidSubmit"
-          EditContext="editContext">
+EditContext="editContext">
     @* 検証を有効にする *@
     <DataAnnotationsValidator />
     @* 検証のエラーメッセージは隠しておく *@
@@ -47,7 +47,7 @@
     </div>
 
     <button class="btn btn-primary" type="submit"
-            disabled="@formInvalid">
+    disabled="@formInvalid">
         登録
     </button>
     <div style="margin-top:20px">
@@ -61,14 +61,14 @@
     public class Address
     {
         [StringLength(7, ErrorMessage = "郵便番号は7桁までです")]
-        public string zipCode { get; set; }
-        public string prefecture { get; set; }
+        public string zipCode { get; set; } = "";
+        public string prefecture { get; set; } = "";
 
         // 電話番号と名前を必須にする
         [Required(ErrorMessage = "連絡先は必須です")]
-        public string telephone { get; set; }
+        public string telephone { get; set; } = "";
         [Required(ErrorMessage = "名前を入力してください")]
-        public string name { get; set; }
+        public string name { get; set; } = "";
 
         [Range(10, 100, ErrorMessage = "年齢は10歳から100歳までです")]
         public int age { get; set; }
@@ -80,23 +80,23 @@
     // 登録ボタンの有効/無効を制御する
     private bool formInvalid = true;
     // EditFormに結びつくコンテンツデータ
-    private EditContext editContext;
+    private EditContext? editContext;
 
     protected override void OnInitialized()
     {
         editContext = new EditContext(addressModel);
         editContext.OnFieldChanged += onFieldChanged;
     }
-    private void onFieldChanged(object sender, FieldChangedEventArgs e)
+    private void onFieldChanged(object? sender, FieldChangedEventArgs e)
     {
-        formInvalid = !editContext.Validate();
+        formInvalid = editContext?.Validate() ?? false;
         StateHasChanged();
     }
     // あらかじめ非表示にしておく
     private string displaySummary = "display:none";
 
     private Address addressModel = new Address();
-    private string Message { get; set; }
+    private string Message { get; set; } = "";
     private void onValidSubmit()
     {
         // エラーメッセージを表示する

@@ -16,8 +16,8 @@
 </div>
 
 @code {
-    private string Text { get; set; }
-    private string keycode { get; set; }
+    private string Text { get; set; } = "";
+    private string keycode { get; set; } = "";
     private void OnKeyPress(KeyboardEventArgs e )
     {
         keycode = $"{e.Code} : {e.Key}";

@@ -54,14 +54,14 @@
     public class Address
     {
         [StringLength(7, ErrorMessage = "郵便番号は7桁までです")]
-        public string zipCode { get; set; }
-        public string prefecture { get; set; }
+        public string zipCode { get; set; } = "";
+        public string prefecture { get; set; } = "";
 
         // 電話番号と名前を必須にする
         [Required(ErrorMessage="電話番号は必須です")]
-        public string telephone { get; set; }
+        public string telephone { get; set; } = "";
         [Required(ErrorMessage ="名前を入力してください")]
-        public string name { get; set; }
+        public string name { get; set; } = "";
 
         [Range(10, 100, 
             ErrorMessage = "年齢は10歳から100歳までです")]
@@ -71,7 +71,7 @@
         public DateTime? visitDate { get; set; }
     }
     private Address addressModel = new Address();
-    private string Message { get; set; }
+    private string Message { get; set; } = "";
     private void onValidSubmit()
     {
         Message = addressModel.name + " さん、登録ありがとうございました";
