@@ -1,0 +1,49 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorBind</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="simple">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> シンプルなバインド
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="changefont">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> フォントサイズ変更
+            </NavLink>
+        </div>
+        <ldivi class="nav-item px-3">
+            <NavLink class="nav-link" href="quest">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 質問フォーム
+            </NavLink>
+        </ldivi>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="parent2child">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 親から子へ
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="child2parent">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 子から親へ
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="childclick">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 子のイベントを親へ
+            </NavLink>
+        </div>
+    </nav>
+</div>
+

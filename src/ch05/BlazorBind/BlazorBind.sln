@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBind", "BlazorBind\BlazorBind.csproj", "{18A1746E-2162-4A9C-8770-BD8919FF17CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorBind", "BlazorBind\BlazorBind.csproj", "{C8E5220F-6DA8-4705-BC1C-FA99D1762070}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{18A1746E-2162-4A9C-8770-BD8919FF17CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18A1746E-2162-4A9C-8770-BD8919FF17CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18A1746E-2162-4A9C-8770-BD8919FF17CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18A1746E-2162-4A9C-8770-BD8919FF17CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8E5220F-6DA8-4705-BC1C-FA99D1762070}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E5220F-6DA8-4705-BC1C-FA99D1762070}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E5220F-6DA8-4705-BC1C-FA99D1762070}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E5220F-6DA8-4705-BC1C-FA99D1762070}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

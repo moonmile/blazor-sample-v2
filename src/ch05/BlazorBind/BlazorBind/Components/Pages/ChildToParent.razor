@@ -1,0 +1,20 @@
+﻿@page "/child2parent"
+@rendermode InteractiveServer
+
+<h3>子から親コンポーネントへ伝達する</h3>
+
+<div>
+    体重を入力: <input type="number" @bind="Weight" />
+</div>
+
+<BlazorBind.Components.BmiChildResult @bind-Weight="Weight" @bind-Result="Result" />
+
+<div>
+    BMI 結果: @Result
+</div>
+
+
+@code {
+    public double Weight { get; set; } = 60;
+    public double Result { get; set; }
+}
