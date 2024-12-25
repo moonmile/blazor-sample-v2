@@ -1,0 +1,62 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorBmi</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="nav flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="simple">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> シンプルな表示
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="bmi">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> クラスを使った例
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="param">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> パラメータ指定
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="copyright">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 子コンポーネント
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="copyrightparam">
+                <span class="oi oi-list-rich" aria-hidden="true"></span>
+                <span style="white-space: nowrap">パラメータ付きコンポーネント</span>
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="bmilist">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> リスト表示
+            </NavLink>
+        </div>
+
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="bmiattr">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 属性指定
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="bmicalc">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 計算する
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
