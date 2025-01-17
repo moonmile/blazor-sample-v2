@@ -248,3 +248,5 @@ ModelManifest.xml
 
 .vs
 .ionide
+
+temp/
