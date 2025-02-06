@@ -13,10 +13,12 @@
             <td>BMI</td>
         </tr>
     </thead>
+    <tbody>
     @foreach (var it in Items)
     {
         <BlazorBmi.Components.BmiChild Item="@it" />
     }
+    </tbody>
 </table>
 
 @code {

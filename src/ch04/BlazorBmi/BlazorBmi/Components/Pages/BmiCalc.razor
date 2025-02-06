@@ -4,22 +4,24 @@
 <h3>BMIの計算</h3>
 
 <table class="table">
-    <tr>
-        <td>名前</td>
-        <td><input @bind-value="bmi.Name" /></td>
-    </tr>
-    <tr>
-        <td>身長</td>
-        <td><input @bind-value="bmi.Height"/></td>
-    </tr>
-    <tr>
-        <td>体重</td>
-        <td><input @bind-value="bmi.Weight" /></td>
-    </tr>
-    <tr>
-        <td>BMI</td>
-        <td>@result.ToString("00.0")</td>
-    </tr>
+    <tbody>
+        <tr>
+            <td>名前</td>
+            <td><input @bind-value="bmi.Name" /></td>
+        </tr>
+        <tr>
+            <td>身長</td>
+            <td><input @bind-value="bmi.Height" /></td>
+        </tr>
+        <tr>
+            <td>体重</td>
+            <td><input @bind-value="bmi.Weight" /></td>
+        </tr>
+        <tr>
+            <td>BMI</td>
+            <td>@result.ToString("00.0")</td>
+        </tr>
+    </tbody>
 </table>
 <button class="btn btn-primary" @onclick="onCalc">計算</button>
 
