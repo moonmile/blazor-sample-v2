@@ -1,7 +1,5 @@
 ﻿@page "/books"
 @rendermode InteractiveServer
-@using Microsoft.EntityFrameworkCore
-@using BlazorSvMySql.Models
 
 <h3>Books</h3>
 <table class="table">
@@ -13,20 +11,27 @@
             <td>出版社</td>
         </tr>
     </thead>
-    @foreach (var it in books)
-    {
-        <tr @onclick="e => onSelected(it)" style="@(it == book ? "background:orange" : "")">
-            <td>@it.Title</td>
-            <td>@it.Author</td>
-            <td>@it.Price</td>
-            <td>@it.Publisher</td>
-        </tr>
-    }
+    <tbody>
+        @foreach (var it in books)
+        {
+            <tr @onclick="e => onSelected(it)"
+                style="@(it.Id == book.Id ? "background-color:orange" : "")">
+                <td>@it.Title</td>
+                <td>@it.Author</td>
+                <td>@it.Price</td>
+                <td>@it.Publisher</td>
+            </tr>
+        }
+    </tbody>
 </table>
 
 <div class="form-group" style="margin-top:20px;">
     <label for="searchTitle">タイトルの絞り込み</label>
-    <input type="text" id="searchTitle" @bind="searchText" @onkeypress="onKeyPress" @bind:event="oninput" class="form-control" />
+    <input type="text" id="searchTitle"
+           @bind="searchText"
+           @bind:event="oninput"
+           @onkeypress="onKeyPress"
+           class="form-control" />
 </div>
 
 <div>
@@ -57,21 +62,24 @@
     </div>
 </div>
 
-
+<style>
+    <!-- 選択時の背景色を有効にする -->
+    .table > :not(caption) > * > * {
+        background-color: inherit;
+    }
+</style>
 
 @code {
-
-
     private BlazorSvMySql.Models.BlazordbContext ent = default!;
-    private List<Models.Books> books { get; set; } = default!;
-    private Models.Books book { get; set; } = new Models.Books();
-    private string Message { get; set; } = "";
-    private string searchText { get; set; } = "";
+    private List<Models.Books> books = default!;
+    private Models.Books book { get; set; } = new();
+    private string Message = "";
+    private string searchText = "";
 
     protected override void OnInitialized()
     {
         // this.ent = DbFactory.CreateDbContext();
-        this.ent = new BlazordbContext();
+        this.ent = new Models.BlazordbContext();
         this.books = ent.Books.ToList();
     }
 
@@ -111,10 +119,10 @@
     /// <param name="b"></param>
     private void onKeyPress(KeyboardEventArgs e)
     {
-        System.Diagnostics.Debug.WriteLine("code " + e.Code);
         if (e.Code == "Enter")
         {
-            this.books = ent.Books.Where(t => t.Title.Contains(searchText)).ToList();
+            this.books = ent.Books.Where(
+                t => t.Title.Contains(searchText)).ToList();
         }
     }
 }

@@ -4,9 +4,10 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>2f9bfeae-696b-4b20-8acf-b8a088fa3218</UserSecretsId>
   </PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.8" />
+		<PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.0" />
 	</ItemGroup>
 
 </Project>

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSv", "BlazorSv\BlazorSv.csproj", "{469E45AE-E15C-42DD-A612-E3672C0CBD8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSvMySql", "BlazorSvMySql\BlazorSvMySql.csproj", "{FFA87F9A-D5B0-4D60-9F24-06C64C0C7243}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorSvMySql", "BlazorSvMySql\BlazorSvMySql.csproj", "{A4F935E9-86FF-43E9-26F0-7329EC31722C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +17,15 @@ Global
 		{469E45AE-E15C-42DD-A612-E3672C0CBD8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{469E45AE-E15C-42DD-A612-E3672C0CBD8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{469E45AE-E15C-42DD-A612-E3672C0CBD8E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFA87F9A-D5B0-4D60-9F24-06C64C0C7243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFA87F9A-D5B0-4D60-9F24-06C64C0C7243}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFA87F9A-D5B0-4D60-9F24-06C64C0C7243}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFA87F9A-D5B0-4D60-9F24-06C64C0C7243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4F935E9-86FF-43E9-26F0-7329EC31722C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4F935E9-86FF-43E9-26F0-7329EC31722C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4F935E9-86FF-43E9-26F0-7329EC31722C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4F935E9-86FF-43E9-26F0-7329EC31722C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FE841C6-EA16-4688-AE73-CFB00870A75A}
 	EndGlobalSection
 EndGlobal

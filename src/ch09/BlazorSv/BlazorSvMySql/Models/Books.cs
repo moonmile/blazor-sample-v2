@@ -6,9 +6,9 @@ namespace BlazorSvMySql.Models
     public partial class Books
     {
         public int Id { get; set; }
-        public string Title { get; set; } = "";
-        public string Author { get; set; } = "";
+        public string Title { get; set; } = null!;
+        public string Author { get; set; } = null!;
         public int Price { get; set; }
-        public string Publisher { get; set; } = "";
+        public string Publisher { get; set; } = null!;
     }
 }

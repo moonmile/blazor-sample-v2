@@ -19,7 +19,11 @@ public partial class BlazordbContext : DbContext
 
     public virtual DbSet<Books> Books { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySQL("server=localhost;user id=blazor;password=blazor;database=blazordb;port=3306;sslmode=None");
+protected override void OnConfiguring(
+    DbContextOptionsBuilder optionsBuilder)
+    => optionsBuilder.UseMySQL(
+        @"server=localhost;user id=blazor;
+        password=blazor;database=blazordb;
+        port=3306;sslmode=None");
 
 }
