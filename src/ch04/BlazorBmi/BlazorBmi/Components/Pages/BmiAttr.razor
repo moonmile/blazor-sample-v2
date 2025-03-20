@@ -1,5 +1,5 @@
 ﻿@page "/bmiattr"
-@using BlazorBmi.Components.Pages
+@rendermode InteractiveServer
 
 <h3>属性指定なし</h3>
 
@@ -12,10 +12,14 @@
             <td>BMI</td>
         </tr>
     </thead>
+    <tbody>
     @foreach (var it in Items)
     {
-        <BlazorBmi.Components.BmiChildItem Name="@it.Name" Height="@it.Height" Weight="@it.Weight" />
+        <BlazorBmi.Components.BmiChildItem 
+        Name="@it.Name" Height="@it.Height" 
+        Weight="@it.Weight" />
     }
+    </tbody>
 </table>
 
 <h3>属性指定あり</h3>
@@ -29,23 +33,26 @@
             <td>BMI</td>
         </tr>
     </thead>
+    <tbody>
     @foreach (var it in Items)
     {
         var attrs = new Dictionary<string, object>()
-    {
-        { "Name", it.Name },
-        { "Height", it.Height },
-        { "Weight", it.Weight },
-    };
-        <BlazorBmi.Components.BmiChildItem @attributes="attrs" />
+        {
+            { "Name", it.Name },
+            { "Height", it.Height },
+            { "Weight", it.Weight },
+        };
+        <BlazorBmi.Components.BmiChildItem 
+        @attributes="attrs" />
     }
+    </tbody>
 </table>
 
 @code {
     private List<BmiItem> Items { get; set; } = new List<BmiItem>();
 
     /// <summary>
-    /// パラメータを初期化する
+    /// パラメーターを初期化する
     /// </summary>
     protected override void OnInitialized()
     {

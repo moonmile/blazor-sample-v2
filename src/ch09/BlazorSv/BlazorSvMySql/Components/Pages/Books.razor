@@ -1,6 +1,7 @@
 ﻿@page "/books"
+@rendermode InteractiveServer
 @using Microsoft.EntityFrameworkCore
-@using BlazorSv.Models
+@using BlazorSvMySql.Models
 
 <h3>Books</h3>
 <table class="table">
@@ -61,7 +62,7 @@
 @code {
 
 
-    private BlazorSv.Models.BlazordbContext ent = default!;
+    private BlazorSvMySql.Models.BlazordbContext ent = default!;
     private List<Models.Books> books { get; set; } = default!;
     private Models.Books book { get; set; } = new Models.Books();
     private string Message { get; set; } = "";

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BlazorSv.Models
+namespace BlazorSvMySql.Models
 {
     public partial class Books
     {

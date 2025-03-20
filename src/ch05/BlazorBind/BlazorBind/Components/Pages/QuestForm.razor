@@ -69,7 +69,9 @@
     private string Message { get; set; } = "";
 
     private int prefectureId { get; set; }
-    private string prefectureName => prefectureList.FirstOrDefault(t => t.ID == this.prefectureId)?.Name ?? "";
+    private string prefectureName => 
+      prefectureList.FirstOrDefault(
+        t => t.ID == this.prefectureId)?.Name ?? "";
 
     public void onSubmit()
     {

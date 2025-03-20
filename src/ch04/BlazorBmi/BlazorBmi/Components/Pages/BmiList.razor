@@ -1,5 +1,4 @@
 ﻿@page "/bmilist"
-@rendermode InteractiveServer
 
 <h3>リスト表示</h3>
 
@@ -25,7 +24,7 @@
     private List<BmiItem>? Items { get; set; } = new List<BmiItem>();
 
     /// <summary>
-    /// パラメータを初期化する
+    /// パラメーターを初期化する
     /// </summary>
     protected override void OnInitialized()
     {

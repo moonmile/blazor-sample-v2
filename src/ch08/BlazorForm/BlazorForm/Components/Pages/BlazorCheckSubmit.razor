@@ -6,7 +6,7 @@
 
 @* Model の結びつけは OnInitialized で行う *@
 <EditForm OnValidSubmit="onValidSubmit"
-EditContext="editContext">
+    EditContext="editContext">
     @* 検証を有効にする *@
     <DataAnnotationsValidator />
     @* 検証のエラーメッセージは隠しておく *@
@@ -90,7 +90,7 @@ EditContext="editContext">
     }
     private void onFieldChanged(object? sender, FieldChangedEventArgs e)
     {
-        formInvalid = editContext?.Validate() ?? false;
+        formInvalid = !editContext!.Validate();
         StateHasChanged();
     }
     // あらかじめ非表示にしておく

@@ -1,5 +1,4 @@
-﻿@rendermode InteractiveServer
-<tr>
+﻿<tr>
     <td>@Item?.Name</td>
     <td>@Item?.Height</td>
     <td>@Item?.Height</td>
@@ -7,7 +6,7 @@
 </tr>
 
 @code {
-    // パラメータで表示する要素を受ける
+    // パラメーターで表示する要素を受ける
     [Parameter]
     public BmiItem? Item { get; set; }
     // ChildContent は固定

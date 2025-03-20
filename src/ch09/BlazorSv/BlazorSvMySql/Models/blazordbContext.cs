@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BlazorSv.Models;
+namespace BlazorSvMySql.Models;
 
 
 public partial class BlazordbContext : DbContext

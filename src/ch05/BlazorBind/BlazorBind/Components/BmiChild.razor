@@ -1,6 +1,4 @@
-﻿@rendermode InteractiveServer
-
-<div style="background-color:orange">
+﻿<div style="background-color:orange">
     <h2>子コンポーネント</h2>
     <div>
         Hight: @Height cm, Weigth: @Weight kg.
@@ -28,7 +26,7 @@
         }
     }
 
-    // パラメータの変更を受け付ける時に必須. MVVM の twoway と同じ
+    // パラメーターの変更を受け付ける時に必須. MVVM の twoway と同じ
     [Parameter]
     public EventCallback<double> WeightChanged { get; set; }
 }

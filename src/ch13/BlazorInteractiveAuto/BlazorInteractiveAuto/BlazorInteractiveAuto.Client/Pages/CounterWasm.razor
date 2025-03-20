@@ -1,0 +1,26 @@
+﻿@page "/wasm"
+@rendermode InteractiveWebAssembly
+
+<PageTitle>Counter(WebAssembly)</PageTitle>
+
+<h1>Counter(WebAssembly)</h1>
+
+<p>動作モード：@(OperatingSystem.IsBrowser() ? "WASM" : "Server")</p>
+<p>動作モード：@(OperatingSystem.IsWindows() ? "Windows" : "No Windows")</p>
+
+<p role="status">Current count: @currentCount</p>
+
+<p role="status">GlobalCounter: @GlobalCounter.Instance.Value</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+
+        GlobalCounter.Instance.Increment();
+    }
+}
