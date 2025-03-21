@@ -1,4 +1,5 @@
 ﻿using System;
+using BlazorSv.Components;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,14 +13,20 @@ public partial class BlazordbContext : DbContext
     {
     }
 
-    public BlazordbContext(DbContextOptions<BlazordbContext> options)
+    public BlazordbContext(
+        DbContextOptions<BlazordbContext> options)
         : base(options)
     {
     }
 
     public virtual DbSet<Books> Books { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=.;Database=blazordb;Trusted_connection=True;TrustServerCertificate=Yes");
-
+    /*
+    protected override void OnConfiguring(
+        DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer(
+        @"Server=.;Database=blazordb;
+        Trusted_connection=True;
+        TrustServerCertificate=Yes");
+    */
 }

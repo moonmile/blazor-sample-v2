@@ -1,5 +1,8 @@
 ﻿@page "/books"
 @rendermode InteractiveServer
+@using Microsoft.EntityFrameworkCore
+@using BlazorSv.Models
+@inject IDbContextFactory<BlazordbContext> DbFactory
 
 <h3>Books</h3>
 <table class="table">
@@ -65,7 +68,7 @@
 <style>
     <!-- 選択時の背景色を有効にする -->
     .table > :not(caption) > * > * {
-        background-color: inherit;
+    background-color: inherit;
     }
 </style>
 
@@ -78,6 +81,7 @@
 
     protected override void OnInitialized()
     {
+        // 環境変数から接続文字列を取得する場合
         this.ent = DbFactory.CreateDbContext();
         // this.ent = new Models.BlazordbContext();
         this.books = ent.Books.ToList();

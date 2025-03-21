@@ -1,7 +1,7 @@
 ﻿@page "/booklist"
-@using BookWeb.Models;
-@inject IJSRuntime JSRuntime ;
+@using BlazorWebApiWasm.Models 
 @inject HttpClient Http
+@inject IJSRuntime JSRuntime
 
 <h3>BookList</h3>
 <button class="btn btn-primary" @onclick="onSearch">再検索</button>
@@ -14,15 +14,18 @@
             <td>出版社</td>
         </tr>
     </thead>
-    @foreach (var it in books)
-    {
-        <tr @onclick="e => onSelected(it)" style="@(it == book ? "background:orange" : "")">
-            <td>@it.Title</td>
-            <td>@it.Author</td>
-            <td>@it.Price</td>
-            <td>@it.Publisher</td>
-        </tr>
-    }
+    <tbody>
+        @foreach (var it in books)
+        {
+            <tr @onclick="e => onSelected(it)"
+                style="@(it.Id == book.Id ? "background-color:orange" : "")">
+                <td>@it.Title</td>
+                <td>@it.Author</td>
+                <td>@it.Price</td>
+                <td>@it.Publisher</td>
+            </tr>
+        }
+    </tbody>
 </table>
 <div>
     <div style="margin-top:20px; margin-bottom:20px;">
@@ -57,8 +60,8 @@
 
 @code {
 
-    private List<Books> books { get; set; } = new List<Books>();
-    private Books? book { get; set; } = new Books();
+    private List<Books> books = new();
+    private Books book { get; set; } = new();
     private string Message { get; set; } = "";
 
     protected override void OnInitialized()
@@ -71,7 +74,7 @@
     /// </summary>
     private async void onSearch()
     {
-        var items = await Http.GetFromJsonAsync<List<Books>>("http://localhost:5000/api/books/");
+        var items = await Http.GetFromJsonAsync<List<Books>>("api/books");
         if (items == null) return;
         this.books = items;
         this.StateHasChanged();
@@ -92,13 +95,13 @@
         if (this.book?.Id == 0)
         {
             // 新規作成
-            var res = await Http.PostAsJsonAsync("http://localhost:5000/api/books/", book);
-            this.book = await res.Content.ReadFromJsonAsync<Books>();
+            var res = await Http.PostAsJsonAsync("api/books/", book);
+            this.book = await res.Content.ReadFromJsonAsync<Books>() ?? default!;
         }
         else
         {
             // 更新処理
-            var res = await Http.PutAsJsonAsync($"http://localhost:5000/api/books/{book?.Id}", book);
+            var res = await Http.PutAsJsonAsync($"api/books/{book?.Id}", book);
         }
         // リストを更新
         onSearch();
@@ -110,11 +113,10 @@
     private async void onDelete()
     {
         if (this.book?.Id == 0) return;
+        bool result = await JSRuntime.InvokeAsync<bool>("confirm", "削除してもよろしいですか？");
+        if (result == false) return;
 
-        if (await JSRuntime.InvokeAsync<int>(
-            "jsFunctions.confirmOkCancel", "削除してもよろしいですか？") == 0) return;
-
-        var res = await Http.DeleteAsync($"http://localhost:5000/api/books/{book?.Id}");
+        var res = await Http.DeleteAsync($"api/books/{book?.Id}");
         onSearch();
         Message = "削除しました";
     }

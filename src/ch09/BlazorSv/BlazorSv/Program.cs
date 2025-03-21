@@ -1,10 +1,18 @@
-using BlazorSv.Components;
+﻿using BlazorSv.Components;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// 環境変数から接続文字列を取得する
+builder.Services.AddDbContextFactory<
+    BlazorSv.Models.BlazordbContext>(
+    options => options.UseSqlServer(
+        builder.Configuration
+        .GetConnectionString("DBConnection")));
 
 var app = builder.Build();
 
