@@ -12,9 +12,6 @@ builder.Services.AddScoped(sp =>
     return new HttpClient { BaseAddress = new Uri("http://localhost:5000/") };
 });
 
-// JSRuntime ‚ð—LŒø‚É‚·‚é
-
-
 
 var app = builder.Build();
 

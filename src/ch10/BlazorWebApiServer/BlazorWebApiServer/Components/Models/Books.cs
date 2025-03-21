@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BlazorWebApiServer.Components.Models
+namespace BookWeb.Models
 {
     public partial class Books
     {
