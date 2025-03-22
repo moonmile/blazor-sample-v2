@@ -18,7 +18,7 @@
         @foreach (var it in books)
         {
             <tr @onclick="e => onSelected(it)"
-                style="@(it.Id == book.Id ? "background-color:orange" : "")">
+            style="@(it.Id == book.Id ? "background-color:orange" : "")">
                 <td>@it.Title</td>
                 <td>@it.Author</td>
                 <td>@it.Price</td>
@@ -27,6 +27,7 @@
         }
     </tbody>
 </table>
+
 <div>
     <div style="margin-top:20px; margin-bottom:20px;">
         <button class="btn btn-primary" @onclick="onCreate">新規作成</button>
@@ -56,6 +57,13 @@
     </div>
 </div>
 
+<style>
+    <!-- 選択時の背景色を有効にする -->
+    .table > :not(caption) > * > * {
+    background-color: inherit;
+    }
+</style>
+
 
 
 @code {
@@ -74,7 +82,8 @@
     /// </summary>
     private async void onSearch()
     {
-        var items = await Http.GetFromJsonAsync<List<Books>>("api/books");
+        var items = await Http.GetFromJsonAsync<List<Books>>(
+            "api/books");
         if (items == null) return;
         this.books = items;
         this.StateHasChanged();
@@ -113,8 +122,9 @@
     private async void onDelete()
     {
         if (this.book?.Id == 0) return;
-        bool result = await JSRuntime.InvokeAsync<bool>("confirm", "削除してもよろしいですか？");
-        if (result == false) return;
+        if (await JSRuntime.InvokeAsync<bool>(
+            "confirm", "削除してもよろしいですか？") 
+            == false) return; 
 
         var res = await Http.DeleteAsync($"api/books/{book?.Id}");
         onSearch();
