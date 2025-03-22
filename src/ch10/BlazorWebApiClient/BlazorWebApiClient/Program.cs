@@ -6,12 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
-
-builder.Services.AddScoped(sp =>
-{
-    return new HttpClient { BaseAddress = new Uri("http://localhost:5000/") };
-});
-
+ builder.Services.AddScoped(
+    sp => new HttpClient
+    {
+        BaseAddress = new Uri("http://localhost:5000/")
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

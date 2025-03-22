@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
+// web api ÇÃê›íË
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddDbContext<
@@ -16,13 +16,12 @@ builder.Services.AddDbContext<
     options => options.UseSqlServer(
         builder.Configuration
         .GetConnectionString("DBConnection")));
-
+// inject HttpClient
 builder.Services.AddScoped(sp =>
 {
     var nav = sp.GetRequiredService<NavigationManager>();
     return new HttpClient { BaseAddress = new Uri(nav.BaseUri) };
 });
-
 
 var app = builder.Build();
 
@@ -44,6 +43,7 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(BlazorWebApiClientSameSv.Client._Imports).Assembly);
+// web api ÇÃê›íË
 app.MapControllers();
 
 app.Run();

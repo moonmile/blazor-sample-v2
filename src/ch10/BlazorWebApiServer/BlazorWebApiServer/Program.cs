@@ -7,10 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddScoped(sp =>
-{
-    return new HttpClient { BaseAddress = new Uri("http://localhost:5000/") };
-});
+builder.Services.AddScoped(
+    sp => new HttpClient
+    {
+        BaseAddress = new Uri("http://localhost:5000/")
+    });
 
 
 var app = builder.Build();
