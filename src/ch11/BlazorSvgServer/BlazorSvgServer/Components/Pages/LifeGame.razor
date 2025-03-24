@@ -1,4 +1,6 @@
 ﻿@page "/lifegame"
+@rendermode InteractiveServer
+
 <h3>ライフゲーム</h3>
 <svg width="500" height="500">
     @for (int y = 0; y < wy; y++)
@@ -8,7 +10,7 @@
             int xx = x;
             int yy = y;
             <rect x="@(xx*10)" y="@(yy*10)" width="8" height="8"
-                  fill="@( cells[xx,yy] ? "blue": "lightgray")"
+                  fill="@( cells[xx,yy] ? "orange": "lightgray")"
                   @onclick="e => onClick(e,xx,yy)" />
         }
     }
