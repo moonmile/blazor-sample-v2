@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="/" />
+    <link rel="stylesheet" href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
+    <link rel="stylesheet" href="@Assets["app.css"]" />
+    <link rel="stylesheet" href="@Assets["BlazorChartJs.styles.css"]" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <ImportMap />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <HeadOutlet />
+</head>
+
+<body>
+  <Routes />
+  <script src="_framework/blazor.web.js"></script>
+  <script>
+    window.chartInterop = {
+      renderChart: function (canvasId, chartData) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: chartData.labels,
+            datasets: [{
+              label: chartData.label,
+              data: chartData.data,
+              fill: false,
+              borderColor: 'rgb(75, 192, 192)',
+              tension: 0.1
+            }]
+          }
+        });
+      }
+    };
+    window.chartInterop2 = {
+      renderChart: function (canvasId, chartData) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: chartData.labels,
+            datasets: [
+            {
+              label: chartData.labelAve,
+              data: chartData.dataAve,
+              fill: false,
+              borderColor: 'green',
+              tension: 0.1
+            },
+            {
+              label: chartData.labelMax,
+              data: chartData.dataMax,
+              fill: false,
+              borderColor: 'red',
+              tension: 0.1
+            },
+            {
+              label: chartData.labelMin,
+              data: chartData.dataMin,
+              fill: false,
+              borderColor: 'blue',
+              tension: 0.1
+            }]
+          }
+        });
+      }
+    };
+  </script>
+</body>
+</html>

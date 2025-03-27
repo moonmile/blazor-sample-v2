@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
+  <link rel="stylesheet" 
+    href="@Assets["lib/bootstrap/dist/css/bootstrap.min.css"]" />
+  <link rel="stylesheet" 
+    href="@Assets["app.css"]" />
+  <link rel="stylesheet" 
+    href="@Assets["BlazorJs.styles.css"]" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+  <ImportMap />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <HeadOutlet />
+</head>
+<body>
+  <Routes />
+  <script src="_framework/blazor.web.js"></script>
+  <script>
+    window.jsFunctions = {
+      changeTitle: function (title, id) {
+        console.log("call jsFunctions.changeText");
+        $(`#${id}`).text(title);
+      },
+      changeTitleRef: function (title, el) {
+        console.log("call jsFunctions.changeTextRef");
+        el.innerText = title;
+      },
+      commitTitle: function () {
+        let title = $("#title").val();
+        $("#msg").text(title);
+        DotNet.invokeMethodAsync("BlazorJs", "commitTitleNet", title);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,13 +1,12 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorJs", "BlazorJs\BlazorJs.csproj", "{B6609B8F-B8D5-4CEC-803D-86FAB116D7B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorJs", "BlazorJs\BlazorJs.csproj", "{CD801B21-42C8-4AD6-8B43-96B0FCA47E68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorJsDialog", "BlazorJsDialog\BlazorJsDialog.csproj", "{2F90A3F5-5DAF-4848-B665-A637F03DF79D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorJsDialog", "BlazorJsDialog\BlazorJsDialog.csproj", "{5CD7EE76-FB4F-4DD1-B143-2CED6C7698FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorChartJs", "BlazorChartJs\BlazorChartJs.csproj", "{3B893CF6-F0C9-49DE-94A4-837B877F7403}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorChartJs", "BlazorChartJs\BlazorChartJs.csproj", "{C361F53E-8B4C-4ECA-BA70-268E96D76D7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,20 +14,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B6609B8F-B8D5-4CEC-803D-86FAB116D7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6609B8F-B8D5-4CEC-803D-86FAB116D7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6609B8F-B8D5-4CEC-803D-86FAB116D7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6609B8F-B8D5-4CEC-803D-86FAB116D7B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F90A3F5-5DAF-4848-B665-A637F03DF79D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F90A3F5-5DAF-4848-B665-A637F03DF79D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F90A3F5-5DAF-4848-B665-A637F03DF79D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F90A3F5-5DAF-4848-B665-A637F03DF79D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B893CF6-F0C9-49DE-94A4-837B877F7403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B893CF6-F0C9-49DE-94A4-837B877F7403}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B893CF6-F0C9-49DE-94A4-837B877F7403}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B893CF6-F0C9-49DE-94A4-837B877F7403}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD801B21-42C8-4AD6-8B43-96B0FCA47E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD801B21-42C8-4AD6-8B43-96B0FCA47E68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD801B21-42C8-4AD6-8B43-96B0FCA47E68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD801B21-42C8-4AD6-8B43-96B0FCA47E68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CD7EE76-FB4F-4DD1-B143-2CED6C7698FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD7EE76-FB4F-4DD1-B143-2CED6C7698FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD7EE76-FB4F-4DD1-B143-2CED6C7698FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD7EE76-FB4F-4DD1-B143-2CED6C7698FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C361F53E-8B4C-4ECA-BA70-268E96D76D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C361F53E-8B4C-4ECA-BA70-268E96D76D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C361F53E-8B4C-4ECA-BA70-268E96D76D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C361F53E-8B4C-4ECA-BA70-268E96D76D7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2785AF42-E05D-4CA7-B242-67B3EB345134}
 	EndGlobalSection
 EndGlobal

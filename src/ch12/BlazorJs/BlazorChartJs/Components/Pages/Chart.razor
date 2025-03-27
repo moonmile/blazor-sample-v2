@@ -1,0 +1,24 @@
+﻿@page "/chart"
+@rendermode InteractiveServer
+@inject IJSRuntime JS
+<h3>Chart</h3>
+<canvas id="myChart" width="400" height="200"></canvas>
+
+@code {
+  protected override async 
+    Task OnAfterRenderAsync(bool firstRender)
+  {
+    if ( firstRender == true )
+    {
+      var chartData = new
+      {
+        label = "気温グラフ",
+        labels = new[] { "1月", "2月", "3月", "4月", "5月" },
+        data = new[] { 10, 20, 15, 30, 25 }
+      };
+      await JS.InvokeVoidAsync(
+          "chartInterop.renderChart", 
+          "myChart", chartData);
+    }
+  }
+}
