@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\BlazorInteractiveAuto.Libs\BlazorInteractiveAuto.Libs.csproj" />
+    <ProjectReference Include="..\..\BlazorInteractiveAutoGlobal.Libs\BlazorInteractiveAutoGlobal.Libs.csproj" />
   </ItemGroup>
 
 </Project>

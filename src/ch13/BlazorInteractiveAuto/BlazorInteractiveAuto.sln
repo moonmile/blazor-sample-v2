@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorInteractiveAuto", "Bl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorInteractiveAuto.Client", "BlazorInteractiveAuto\BlazorInteractiveAuto.Client\BlazorInteractiveAuto.Client.csproj", "{5D33C1EE-2CB6-48A3-B78B-2309588B2DA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorInteractiveAuto.Libs", "BlazorInteractiveAuto.Libs\BlazorInteractiveAuto.Libs.csproj", "{920AF529-D4AF-4AF8-BB00-39D68D3634DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{5D33C1EE-2CB6-48A3-B78B-2309588B2DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D33C1EE-2CB6-48A3-B78B-2309588B2DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D33C1EE-2CB6-48A3-B78B-2309588B2DA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{920AF529-D4AF-4AF8-BB00-39D68D3634DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{920AF529-D4AF-4AF8-BB00-39D68D3634DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{920AF529-D4AF-4AF8-BB00-39D68D3634DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{920AF529-D4AF-4AF8-BB00-39D68D3634DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

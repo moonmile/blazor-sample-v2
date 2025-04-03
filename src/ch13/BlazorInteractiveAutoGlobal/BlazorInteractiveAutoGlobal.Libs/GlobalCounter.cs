@@ -1,4 +1,4 @@
-﻿namespace BlazorInteractiveAuto.Client
+﻿namespace BlazorInteractiveAutoGlobal.Libs
 {
     /// <summary>
     /// アプリケーション全体で共通化するカウンタークラス
@@ -7,7 +7,8 @@
     {
         public GlobalCounter() { }
         public int Value { get; set; }
-        public void Increment() {
+        public void Increment()
+        {
             Value++;
         }
 
