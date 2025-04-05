@@ -3,11 +3,9 @@
 @inject HttpClient Http
 
 <PageTitle>Weather(WebAssembly)</PageTitle>
-
 <h1>Weather(WebAssembly)</h1>
-
-<p>動作モード：@(OperatingSystem.IsBrowser() ? "WASM" : "Server")</p>
-<p>動作モード：@(OperatingSystem.IsWindows() ? "Windows" : "No Windows")</p>
+<p>動作モード：
+    @(OperatingSystem.IsBrowser() ? "WASM" : "Server")</p>
 
 
 <p>This component demonstrates fetching data from the server.</p>
