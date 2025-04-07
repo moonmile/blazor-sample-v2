@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHybirdMauiApp", "BlazorHybirdMauiApp\BlazorHybirdMauiApp\BlazorHybirdMauiApp.csproj", "{BE5FC1FA-82F7-4641-81C0-4749ACD2D998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHybirdMauiApp.Shared", "BlazorHybirdMauiApp\BlazorHybirdMauiApp.Shared\BlazorHybirdMauiApp.Shared.csproj", "{C37950C2-20CB-41A4-95B0-D6A3CF92C104}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorHybirdMauiApp.Web", "BlazorHybirdMauiApp\BlazorHybirdMauiApp.Web\BlazorHybirdMauiApp.Web.csproj", "{0EA76090-F40C-40E7-896F-B2C33E3C0B6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE5FC1FA-82F7-4641-81C0-4749ACD2D998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE5FC1FA-82F7-4641-81C0-4749ACD2D998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE5FC1FA-82F7-4641-81C0-4749ACD2D998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE5FC1FA-82F7-4641-81C0-4749ACD2D998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C37950C2-20CB-41A4-95B0-D6A3CF92C104}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C37950C2-20CB-41A4-95B0-D6A3CF92C104}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C37950C2-20CB-41A4-95B0-D6A3CF92C104}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C37950C2-20CB-41A4-95B0-D6A3CF92C104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA76090-F40C-40E7-896F-B2C33E3C0B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA76090-F40C-40E7-896F-B2C33E3C0B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA76090-F40C-40E7-896F-B2C33E3C0B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA76090-F40C-40E7-896F-B2C33E3C0B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {611B8BA9-2AD0-4F2D-977D-8B8172F23ADE}
+	EndGlobalSection
+EndGlobal
