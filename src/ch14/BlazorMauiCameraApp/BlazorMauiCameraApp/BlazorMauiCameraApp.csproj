@@ -14,7 +14,7 @@
         <!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
         <OutputType>Exe</OutputType>
-        <RootNamespace>BlazorMauiApp</RootNamespace>
+        <RootNamespace>BlazorMauiCameraApp</RootNamespace>
         <UseMaui>true</UseMaui>
         <SingleProject>true</SingleProject>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -22,10 +22,10 @@
         <Nullable>enable</Nullable>
 
         <!-- Display name -->
-        <ApplicationTitle>BlazorMauiApp</ApplicationTitle>
+        <ApplicationTitle>BlazorMauiCameraApp</ApplicationTitle>
 
         <!-- App Identifier -->
-        <ApplicationId>com.companyname.blazormauiapp</ApplicationId>
+        <ApplicationId>com.companyname.blazormauicameraapp</ApplicationId>
 
         <!-- Versions -->
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -64,6 +64,14 @@
         <PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="9.0.50" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.4" />
+        <PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
+        <PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="QRCodePage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 using BlazorHybirdMauiApp.Shared.Services;
+using Microsoft.Maui.Devices;
 
 namespace BlazorHybirdMauiApp.Services
 {

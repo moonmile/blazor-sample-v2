@@ -1,11 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls.Hosting;
-using Microsoft.Maui.Hosting;
-using System;
-using System.Net.Http;
+﻿using Microsoft.Extensions.Logging;
+using ZXing.Net.Maui.Controls;
 
-namespace BlazorMauiApp
+namespace BlazorMauiCameraApp
 {
     public static class MauiProgram
     {
@@ -14,22 +10,20 @@ namespace BlazorMauiApp
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseBarcodeReader()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddSingleton<ScannerService>();
+
 
 #if DEBUG
-    		builder.Services.AddBlazorWebViewDeveloperTools();
-    		builder.Logging.AddDebug();
+            builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Logging.AddDebug();
 #endif
-            builder.Services.AddScoped(
-                sp => new HttpClient
-                {
-                    BaseAddress = new Uri("http://localhost:5000/")
-                });
 
             return builder.Build();
         }

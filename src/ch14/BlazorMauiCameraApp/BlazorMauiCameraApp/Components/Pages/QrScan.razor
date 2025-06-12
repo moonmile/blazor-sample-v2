@@ -1,0 +1,14 @@
+﻿@page "/qrscan"
+@inject ScannerService scannerService
+
+<h3>QrScan</h3>
+<button class="btn btn-primary" @onclick="TakeQrCode">Take QR Code</button>
+<p>スキャン結果: @result</p>
+
+@code {
+    private string? result = "";
+    private async Task TakeQrCode()
+    {
+        result = await scannerService.ShowScannerAsync();
+    }
+}
