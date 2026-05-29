@@ -71,15 +71,15 @@
     private Books book { get; set; } = new();
     private string Message { get; set; } = "";
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        onSearch();
+        await onSearch();
     }
 
     /// <summary>
     /// 検索
     /// </summary>
-    private async void onSearch()
+    private async Task onSearch()
     {
         var items = await Http.GetFromJsonAsync<List<Books>>("api/books");
         if (items == null) return;
@@ -97,7 +97,7 @@
     /// <summary>
     /// データ更新
     /// </summary>
-    private async void onUpdate()
+    private async Task onUpdate()
     {
         if (this.book?.Id == 0)
         {
@@ -111,20 +111,20 @@
             var res = await Http.PutAsJsonAsync($"api/books/{book?.Id}", book);
         }
         // リストを更新
-        onSearch();
+        await onSearch();
         Message = "更新しました";
     }
     /// <summary>
     /// データ削除
     /// </summary>
-    private async void onDelete()
+    private async Task onDelete()
     {
         if (this.book?.Id == 0) return;
         bool result = await JSRuntime.InvokeAsync<bool>("confirm", "削除してもよろしいですか？");
         if ( result == false) return;
 
         var res = await Http.DeleteAsync($"api/books/{book?.Id}");
-        onSearch();
+        await onSearch();
         Message = "削除しました";
     }
     /// <summary>

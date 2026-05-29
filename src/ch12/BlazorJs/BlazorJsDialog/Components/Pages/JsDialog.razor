@@ -27,13 +27,13 @@
     private string message = "";
     public string result = "";
     // メッセージダイアログを表示
-    private async void onAlert()
+    private async Task onAlert()
     {
         await JSRuntime.InvokeVoidAsync(
                 "alert", message);
     }
     // 確認メッセージダイアログを表示
-    private async void onConfirm()
+    private async Task onConfirm()
     {
         var ret = await JSRuntime.InvokeAsync<bool>(
                 "confirm", message);

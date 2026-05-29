@@ -36,7 +36,7 @@ public partial class QRCodePage : ContentPage
 		}
 	}
 
-	private async void Button_Clicked(object sender, EventArgs e)
+	private async Task Button_Clicked(object sender, EventArgs e)
 	{
 		await this.Navigation.PopModalAsync();
     }

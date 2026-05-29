@@ -78,7 +78,7 @@
     /// <summary>
     /// 検索
     /// </summary>
-    private async void onSearch()
+    private async Task onSearch()
     {
         // var items = await Http.GetFromJsonAsync<List<Books>>("api/books");
         var items = await Http.GetFromJsonAsync<List<Books>>("https://moonmile.net/blazor/books.json");
@@ -97,7 +97,7 @@
     /// <summary>
     /// データ更新
     /// </summary>
-    private async void onUpdate()
+    private async Task onUpdate()
     {
         if (this.book?.Id == 0)
         {
@@ -117,7 +117,7 @@
     /// <summary>
     /// データ削除
     /// </summary>
-    private async void onDelete()
+    private async Task onDelete()
     {
         if (this.book?.Id == 0) return;
         bool result = await JSRuntime.InvokeAsync<bool>("confirm", "削除してもよろしいですか？");

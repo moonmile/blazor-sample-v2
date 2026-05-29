@@ -15,9 +15,10 @@
     private double Height { get; set; } = 160.0;
     [Parameter]
     public EventCallback<double> OnResultChanged { get; set; }
-    private async void clickCalc()
+    private async Task clickCalc()
     {
         var result = Weight / ((Height / 100) * (Height / 100));
         await OnResultChanged.InvokeAsync(result);
     }
 }
+
